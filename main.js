@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 //Replies with "Ready and reporting for duty" in a specified channel when ready
 client.on('ready', () => {
-  client.channels.cache.get('channel_here').send('Ready and reporting for duty')
+  client.channels.cache.get('channel_id_here').send('Ready and reporting for duty!')
 });
 
 
@@ -22,10 +22,58 @@ client.on('message', msg => {
 
 /*----------------The fun starts here----------------*/
 
+//Big ass E M B E D
+client.on('message', msg => {
+  if (msg.content === '&help') {
+    msg.channel.send(
+      {
+  
+        "embed": {
+          "title": "Commands",
+          "description": "Here's a list of all available commands.",
+          "color": 15641368, 
+          "thumbnail": {
+            "url": "http://www.spectr.ga/dorito.png"
+          },
+          "author": {
+            "name": "Dorito-Bot"
+          },
+          "fields": [
+            {
+              "name": "&help",
+              "value": "Displays this embed"
+            },
+            {
+              "name": "&info",
+              "value": "Displays current version of Dorito-Bot"
+            },
+            {
+              "name": "&drop",
+              "value": "'Drops Doritos' into the channel after command is sent"
+            },
+            {
+              "name": "&startdrop",
+              "value": "Will 'Drop Doritos' every 1 hour and 30 minutes after the command is sent"
+            },
+            {
+              "name": "&roll",
+              "value": "Dorito-Bot will do a barrel roll"
+            },
+            {
+              "name": "&nice",
+              "value": "nice"
+            }          
+          ]
+        }
+      } 
+    )
+  }
+})
+
 //Sends current version of the Bot into a channel
 client.on('message', msg => {
   if (msg.content === '&info') {
-    msg.channel.send('Dorito-Bot version 2.0.1 by DefinitelyNotAlex#4178');
+    msg.channel.send('Dorito-Bot version 2.1.1 by DefinitelyNotAlex#4178');
   }
 });
 
@@ -53,7 +101,12 @@ client.on('message', msg => {
   }
 });
 
-
+//nice
+client.on('message', msg => {
+  if (msg.content === '&nice') {
+    msg.channel.send('nice')
+  }
+});
 
 
 /*----------------The fun ends here----------------*/
