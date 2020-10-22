@@ -23,6 +23,8 @@ client.on('message', msg => {
 /*----------------The fun starts here----------------*/
 
 //Big ass E M B E D
+//Creates an embed with all usable commands
+//Please update this if you add anything
 client.on('message', msg => {
   if (msg.content === '&help') {
     msg.channel.send(
